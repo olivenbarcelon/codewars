@@ -7,6 +7,17 @@ use PHPUnit\Framework\TestCase;
 class StringUtilityTest extends TestCase {
     /**
      * @test
+     * @testdox It should run to camel case
+     * @return void
+     */
+    public function toCamelCase(): void {
+        $this->assertSame('theStealthWarrior', StringUtility::toCamelCase('the-stealth-warrior'));
+        $this->assertSame('TheStealthWarrior', StringUtility::toCamelCase('The_Stealth_Warrior'));
+        $this->assertSame('TheStealthWarrior', StringUtility::toCamelCase('The_Stealth-Warrior'));
+    }
+
+    /**
+     * @test
      * @testdox It should run in array
      * @return void
      */
