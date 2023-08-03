@@ -7,6 +7,18 @@ use PHPUnit\Framework\TestCase;
 class StringUtilityTest extends TestCase {
     /**
      * @test
+     * @testdox It should run split string
+     * @return void
+     */
+    public function splitString(): void {
+        $this->assertSame(['ab', 'c_'], StringUtility::splitString('abc'));
+        $this->assertSame(['ab', 'cd', 'ef'], StringUtility::splitString('abcdef'));
+        $this->assertSame(["ab", "cd", "ef", "g_"], StringUtility::splitString("abcdefg"));
+        $this->assertSame([], StringUtility::splitString(""));
+    }
+
+    /**
+     * @test
      * @testdox It should run to camel case
      * @return void
      */

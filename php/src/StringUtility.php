@@ -4,13 +4,33 @@ namespace Src;
 
 class StringUtility {
     /**
+     * Title: Split Strings
+     * Description:
+     * Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+     * @param string $str
+     * @return array
+     */
+    public static function splitString(string $str): array {
+        // My Solution
+        if(strlen($str) == 0) return [];
+        return array_map(function ($i) {
+            if(strlen($i) != 2) return $i . '_';
+            return $i;
+        }, str_split($str, 2));
+
+        // Codewars Solution (khlivnyuk)
+        // preg_match_all('/\w{2}/', $str . '_', $matches);
+        // return array_values($matches[0]);
+    }
+
+    /**
      * Title: Convert string to camel case
      * Description:
      * Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). The next words should be always capitalized.
      * @param string $str
      * @return void
      */
-    public static function toCamelCase(string $str) {
+    public static function toCamelCase(string $str): string {
         // My Solution
         return array_reduce(preg_split('/(?=[A-Z_-])/', $str), function ($carry, $item) {
             $i = preg_replace('/[-_]+/', '', $item);
@@ -39,7 +59,7 @@ class StringUtility {
      * @param array $array2
      * @return void
      */
-    public static function inArray(array $array1, array $array2) {
+    public static function inArray(array $array1, array $array2): array {
         // My Solution
         $r = [];
         foreach($array1 as $ao) {
