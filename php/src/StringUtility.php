@@ -4,6 +4,40 @@ namespace Src;
 
 class StringUtility {
     /**
+     * Title: Make the Deadfish Swim
+     * Description:
+     * Write a simple parser that will parse and run Deadfish.
+     * Deadfish has 4 commands, each 1 character long:
+     * i increments the value (initially 0)
+     * d decrements the value
+     * s squares the value
+     * o outputs the value into the return array
+     * @param string $data
+     * @return array
+     */
+    public static function deadfishSwim(string $data): array {
+        // My Solution
+        $i = 0;
+        $r = [];
+        foreach(str_split($data) as $item) {
+            switch($item) {
+                case 'i':
+                    $i += 1;
+                    break;
+                case 'd':
+                    $i -= 1;
+                    break;
+                case 's':
+                    $i = pow($i, 2);
+                    break;
+                case 'o':
+                    array_push($r, $i);
+            }
+        }
+        return $r;
+    }
+
+    /**
      * Title: Split Strings
      * Description:
      * Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
