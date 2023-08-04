@@ -7,6 +7,16 @@ use PHPUnit\Framework\TestCase;
 class StringUtilityTest extends TestCase {
     /**
      * @test
+     * @testdox It should run deadfish swim
+     * @return void
+     */
+    public function deadfishSwim(): void {
+        $this->assertSame([8, 64], StringUtility::deadfishSwim('iiisdoso'));
+        $this->assertSame([8, 64], StringUtility::deadfishSwim("iiisxxxdoso"));
+    }
+
+    /**
+     * @test
      * @testdox It should run split string
      * @return void
      */
