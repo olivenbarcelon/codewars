@@ -7,6 +7,15 @@ use PHPUnit\Framework\TestCase;
 class StringUtilityTest extends TestCase {
     /**
      * @test
+     * @testdox It should run meeting
+     * @return void
+     */
+    public function meeting(): void {
+        $this->assertSame('(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)', StringUtility::meeting('Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill'));
+    }
+
+    /**
+     * @test
      * @testdox It should run deadfish swim
      * @return void
      */
