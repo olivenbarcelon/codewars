@@ -4,6 +4,29 @@ namespace Src;
 
 class StringUtility {
     /**
+     * @param string $text
+     * @param integer $n
+     * @return string
+     */
+    public static function splitAlternate(string $text, int $n): string {
+        $d = str_split($text);
+        for($i = 0;$i < $n;$i++) {
+            $l = '';
+            $r = '';
+            for($ctr = 0;$ctr < count($d);$ctr++) {
+                if($ctr % 2 != 0) {
+                    $l .= $d[$ctr];
+                }
+                else {
+                    $r .= $d[$ctr];
+                }
+            }
+            $d = str_split($l . $r);
+        }
+        return implode('', $d);
+    }
+
+    /**
      * Title: Meeting
      * Description:
      * John has invited some friends. His list is:
