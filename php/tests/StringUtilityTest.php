@@ -7,6 +7,20 @@ use PHPUnit\Framework\TestCase;
 class StringUtilityTest extends TestCase {
     /**
      * @test
+     * @testdox It should run split alternate
+     * @return void
+     */
+    public function splitAlternate(): void {
+        $this->assertSame('135024', StringUtility::splitAlternate('012345', 1));
+        $this->assertSame('304152', StringUtility::splitAlternate('012345', 2));
+        $this->assertSame('012345', StringUtility::splitAlternate('012345', 3));
+        $this->assertSame('13024', StringUtility::splitAlternate('01234', 1));
+        $this->assertSame('32104', StringUtility::splitAlternate('01234', 2));
+        $this->assertSame('20314', StringUtility::splitAlternate('01234', 3));
+    }
+
+    /**
+     * @test
      * @testdox It should run meeting
      * @return void
      */
