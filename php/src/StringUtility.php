@@ -4,6 +4,31 @@ namespace Src;
 
 class StringUtility {
     /**
+     * Title: Replace With Alphabet Position
+     * Description:
+     * Welcome.
+     * In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+     * If anything in the text isn't a letter, ignore it and don't return it.
+     * "a" = 1, "b" = 2, etc.
+     * @param string $s
+     * @return string
+     */
+    public static function alphabetPosition(string $s): string {
+        // My Solution
+        $f = array_filter(str_split(strtolower($s)), function ($f) {
+            return preg_match('/[a-zA-Z]/', $f);
+        });
+        $m = array_map(function ($m) {
+            return ord($m) & (31);
+        }, $f);
+        return implode(' ', $m);
+
+        // Codewars Solution (khlivnyuk)
+        // preg_match_all('/[a-z]/', strtolower($s), $out);
+        // return join(' ', array_map(function($ch){return ord($ch) - 96;}, $out[0]));
+    }
+
+    /**
      * @param string $text
      * @param integer $n
      * @return string
