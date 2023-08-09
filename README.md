@@ -9,5 +9,8 @@ Code Practice with Codewars
 **Run Project**
 * vendor/bin/phpunit tests --testdox
 
+**Generate Report**
+* phpdbg -d memory_limit=-1 -qrr ./vendor/bin/phpunit --coverage-html report/ --testdox 
+
 **Dependencies**
 * composer require phpunit/phpunit:^9.5.10 --dev
