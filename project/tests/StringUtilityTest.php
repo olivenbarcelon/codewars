@@ -103,16 +103,4 @@ class StringUtilityTest extends TestCase {
         $a1 = ['tarp', 'mice', 'bull'];
         $this->assertSame([], StringUtility::inArray($a1, $a2));
     }
-
-    /**
-     * @test
-     * @testdox It should run get middle
-     * @return void
-     */
-    public function getMiddle(): void {
-        $this->assertSame('es', StringUtility::getMiddle('test'));
-        $this->assertSame('t', StringUtility::getMiddle('testing'));
-        $this->assertSame('dd', StringUtility::getMiddle('middle'));
-        $this->assertSame('A', StringUtility::getMiddle('A'));
-    }
 }

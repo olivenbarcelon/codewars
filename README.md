@@ -3,15 +3,10 @@
 # [codewars](https://www.codewars.com) ([github](https://github.com/olivenbarcelon/codewars))
 Code Practice with Codewars
 
-**Setup**
-<!-- * composer init -->
-* composer install
+**Setup Project**
+* yarn
+* yarn run test
 
-**Run Project**
-* vendor/bin/phpunit tests --testdox
-
-**Generate Report**
-* phpdbg -d memory_limit=-1 -qrr ./vendor/bin/phpunit --coverage-html report/ --testdox 
-
-**Dependencies**
-* composer require phpunit/phpunit:^9.5.10 --dev
+**References**
+* [Yarn](https://yarnpkg.com)
+* [JestJS](https://jestjs.io)
