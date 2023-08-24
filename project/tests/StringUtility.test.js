@@ -1,16 +1,23 @@
 const getMiddle = require('../js/StringUtility');
 
 describe('String Utility', () => {
-    it('It should get middle of test', () => {
+    it('It should get middle', () => {
         expect(getMiddle('test')).toBe('es');
-    });
-    it('It should get middle of testing', () => {
         expect(getMiddle('testing')).toBe('t');
-    });
-    it('It should get middle of middle', () => {
         expect(getMiddle('middle')).toBe('dd');
-    });
-    it('It should get middle of A', () => {
         expect(getMiddle('A')).toBe('A');
+        expect(getMiddle('1')).toBe('1');
+    });
+
+    it('It should get middle validate by numeric data', () => {
+        expect(() => getMiddle(1)).toThrow('Cannot read properties of string');
+    });
+
+    it('It should get middle validate by undefined', () => {
+        expect(() => getMiddle()).toThrow('Cannot read properties of undefined');
+    });
+
+    it('It should get middle validate by null', () => {
+        expect(() => getMiddle(null)).toThrow('Cannot read properties of null');
     });
 });
