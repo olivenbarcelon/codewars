@@ -7,6 +7,7 @@
  * @returns {string}
  */
 const getMiddle = (text) => {
+    if(typeof(text) === 'number') throw new Error('Cannot read properties of string');
     return text.substring((text.length - 1) / 2, (text.length + 1) - text.length / 2);
 };
 
