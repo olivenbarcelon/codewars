@@ -2,6 +2,22 @@
 
 class NumeralUtility {
     /**
+     * @title Square Every Digit
+     * @description Welcome. In this kata, you are asked to square every digit of a number and concatenate them. Note: The function accepts an integer and returns an integer.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @param {int} data 
+     * @returns {int}
+     */
+    static squareDigit = (data) => {
+        let arr = Array.from(String(data), (c) => {
+            return c * c;
+        });
+
+        return parseInt(arr.join(''));
+    }
+
+    /**
      * @title Playing with Digits
      * @description
      * Some numbers have funny properties. For example:
