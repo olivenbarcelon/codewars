@@ -1,6 +1,15 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should run to roman", () => {
+        expect(NumeralUtility.toRoman(1990)).toBe("MCMXC");
+        expect(NumeralUtility.toRoman(2008)).toBe("MMVIII");
+        expect(NumeralUtility.toRoman(1666)).toBe("MDCLXVI");
+        expect(NumeralUtility.toRoman(1000)).toBe("M");
+        expect(NumeralUtility.toRoman(4)).toBe("IV");
+        expect(NumeralUtility.toRoman(1)).toBe("I");
+    });
+
     it("It should run square digit", () => {
         expect(NumeralUtility.squareDigit(9119)).toBe(811181);
         expect(NumeralUtility.squareDigit(24680)).toBe(41636640);

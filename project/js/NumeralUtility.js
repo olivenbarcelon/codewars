@@ -2,6 +2,43 @@
 
 class NumeralUtility {
     /**
+     * @title Roman Numerals Encoder
+     * @description
+     * Create a function taking a positive integer between 1 and 3999 (both included) as its parameter and returning a string containing the Roman Numeral representation of that integer.
+     * Modern Roman numerals are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero. In Roman numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in MCMXC. 2008 is written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman symbol in descending order: MDCLXVI.
+     * Remember that there can't be more than 3 identical symbols in a row.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @param {int} number 
+     * @returns {string}
+     */
+    static toRoman = (number) => {
+        let roman = "";
+        let numerals = {
+            M: 1000,
+            CM: 900,
+            D: 500,
+            CD: 400,
+            C: 100,
+            XC: 90,
+            L: 50,
+            XL: 40,
+            X: 10,
+            IX: 9,
+            V: 5,
+            IV: 4,
+            I: 1
+        };
+        Object.entries(numerals).forEach(entry => {
+            const [key, value] = entry;
+            roman += key.repeat(Math.floor(number / value));
+            number %= value;
+        });
+
+        return roman;
+    }
+
+    /**
      * @title Square Every Digit
      * @description Welcome. In this kata, you are asked to square every digit of a number and concatenate them. Note: The function accepts an integer and returns an integer.
      * @version 0.0.1
