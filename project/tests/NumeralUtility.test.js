@@ -1,6 +1,12 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should run mean square", () => {
+        expect(NumeralUtility.meanSquare([1, 2, 3], [4, 5, 6])).toBe(9);
+        expect(NumeralUtility.meanSquare([10, 20, 10, 2], [10, 25, 5, -2])).toBe(16.5);
+        expect(NumeralUtility.meanSquare([-1, 0], [0, -1])).toBe(1);
+    });
+
     it("It should run to roman", () => {
         expect(NumeralUtility.toRoman(1990)).toBe("MCMXC");
         expect(NumeralUtility.toRoman(2008)).toBe("MMVIII");

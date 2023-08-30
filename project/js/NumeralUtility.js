@@ -2,6 +2,29 @@
 
 class NumeralUtility {
     /**
+     * @title Mean Square Error
+     * @description
+     * Complete the function that
+     * accepts two integer arrays of equal length
+     * compares the value each member in one array to the corresponding member in the other
+     * squares the absolute value difference between those two values
+     * and returns the average of those squared absolute value difference between each member pair.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023-08-30
+     * @param {int[]} a 
+     * @param {int[]} b 
+     * @returns {int|float}
+     */
+    static meanSquare = (a, b) => {
+        let count = a.length;
+        let sum = 0;
+        Array.from(a, (v, k) => Math.pow((v - b[k]), 2)).forEach(e => sum += e);
+
+        return sum / count;
+    }
+
+    /**
      * @title Roman Numerals Encoder
      * @description
      * Create a function taking a positive integer between 1 and 3999 (both included) as its parameter and returning a string containing the Roman Numeral representation of that integer.
@@ -9,6 +32,7 @@ class NumeralUtility {
      * Remember that there can't be more than 3 identical symbols in a row.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023-08-29
      * @param {int} number 
      * @returns {string}
      */
@@ -43,6 +67,7 @@ class NumeralUtility {
      * @description Welcome. In this kata, you are asked to square every digit of a number and concatenate them. Note: The function accepts an integer and returns an integer.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023-08-27
      * @param {int} data 
      * @returns {int}
      */
@@ -67,6 +92,7 @@ class NumeralUtility {
      * Note: n, p will always be given as strictly positive integers.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023-08-26
      * @param {int} n 
      * @param {int} p 
      * @returns {int}
