@@ -2,6 +2,23 @@
 
 class StringUtility {
     /**
+     * @title RGB To Hex Conversion
+     * @description
+     * The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+     * Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+     * @param {int} r 
+     * @param {int} g 
+     * @param {int} b 
+     * @returns {string}
+     */
+    static toHex = (r, g, b) => {
+        r = r < 0 ? 0 : (r >= 255 ? 255 : r);
+        g = g < 0 ? 0 : (g >= 255 ? 255 : g);
+        b = b < 0 ? 0 : (b >= 255 ? 255 : b);
+        return r.toString(16).padStart(2,"0").toUpperCase() + g.toString(16).padStart(2,"0").toUpperCase() + b.toString(16).padStart(2,"0").toUpperCase();
+    }
+
+    /**
      * @title Which are in?
      * @description
      * Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are substrings of strings of a2.

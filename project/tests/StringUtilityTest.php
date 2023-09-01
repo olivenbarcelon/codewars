@@ -7,18 +7,6 @@ use PHPUnit\Framework\TestCase;
 class StringUtilityTest extends TestCase {
     /**
      * @test
-     * @testdox It should run rgb to hex conversion
-     * @return void
-     */
-    public function toHex(): void {
-        $this->assertSame('FFFFFF', StringUtility::toHex(255, 255, 255));
-        $this->assertSame('FFFFFF', StringUtility::toHex(255, 255, 300));
-        $this->assertSame('000000', StringUtility::toHex(0, 0, 0));
-        $this->assertSame('9400D3', StringUtility::toHex(148, 0, 211));
-    }
-
-    /**
-     * @test
      * @testdox It should run duplicate count
      * @return void
      */
