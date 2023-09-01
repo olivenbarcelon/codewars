@@ -1,6 +1,13 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should run to ehx", () => {
+        expect(StringUtility.toHex(255, 255, 255)).toBe('FFFFFF');
+        expect(StringUtility.toHex(255, 255, 300)).toBe('FFFFFF');
+        expect(StringUtility.toHex(0, 0, 0)).toBe('000000');
+        expect(StringUtility.toHex(148, 0, 211)).toBe('9400D3');
+    });
+
     it("It should run in array", () => {
         expect(StringUtility.inArray(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"])).toEqual(["arp", "live", "strong"]);
         expect(StringUtility.inArray(["xyz", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"])).toEqual(["live", "strong"]);
