@@ -1,10 +1,17 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
-    it("It should run to ehx", () => {
+    it("It should run to camel case", () => {
+        expect(StringUtility.toCamelCase("the-stealth-warrior")).toBe("theStealthWarrior");
+        expect(StringUtility.toCamelCase("The_Stealth_Warrior")).toBe("TheStealthWarrior");
+        expect(StringUtility.toCamelCase("The_Stealth-Warrior")).toBe("TheStealthWarrior");
+    });
+
+    it("It should run to hex", () => {
         expect(StringUtility.toHex(255, 255, 255)).toBe('FFFFFF');
         expect(StringUtility.toHex(255, 255, 300)).toBe('FFFFFF');
         expect(StringUtility.toHex(0, 0, 0)).toBe('000000');
+        expect(StringUtility.toHex(-255, -255, -255)).toBe('000000');
         expect(StringUtility.toHex(148, 0, 211)).toBe('9400D3');
     });
 

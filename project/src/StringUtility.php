@@ -119,28 +119,4 @@ class StringUtility {
         // preg_match_all('/\w{2}/', $str . '_', $matches);
         // return array_values($matches[0]);
     }
-
-    /**
-     * Title: Convert string to camel case
-     * Description:
-     * Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). The next words should be always capitalized.
-     * @param string $str
-     * @return void
-     */
-    public static function toCamelCase(string $str): string {
-        // My Solution
-        // return array_reduce(preg_split('/(?=[A-Z_-])/', $str), function ($carry, $item) {
-        //     $i = preg_replace('/[-_]+/', '', $item);
-        //     if(is_null($carry)) {
-        //         if(preg_match('~^\p{Lu}~u', $i)) {
-        //             return ucfirst(strtolower($i));
-        //         }
-        //         return strtolower($i);
-        //     }
-        //     return $carry . ucfirst(strtolower($i));
-        // });
-
-        // Codewars Solution (muxa92)
-        return preg_replace_callback("~[_-](\w)~", function($m) { return strtoupper($m[1]); }, $str);
-    }
 }
