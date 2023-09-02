@@ -2,10 +2,45 @@
 
 class StringUtility {
     /**
+     * @title Convert string to camel case
+     * @description
+     * Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). The next words should be always capitalized.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.02
+     * @param {string} str 
+     * @returns {string}
+     */
+    static toCamelCase = (str) => {
+        return StringUtility.#pregReplaceCallback(/[_-](\w)/gm, matches => matches[1].toUpperCase(), str);
+    }
+
+    /**
+     * @title Preg Replace Callback
+     * @description Function same as preg_replace_callback of PHP
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.02
+     * @param {RegExp} pattern 
+     * @param {Function} callback 
+     * @param {string} string 
+     * @returns {string}
+     */
+    static #pregReplaceCallback = (pattern, callback, string) => {
+        [...string.matchAll(pattern)].forEach(value => {
+            string = string.replace(value[0], callback(value));
+        });
+        return string;
+    }
+
+    /**
      * @title RGB To Hex Conversion
      * @description
      * The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
      * Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.01
      * @param {int} r 
      * @param {int} g 
      * @param {int} b 
@@ -28,7 +63,7 @@ class StringUtility {
      * Beware: In some languages r must be without duplicates.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-31
+     * @createdAt 2023.08.31
      * @param {string[]} array1 
      * @param {string[]} array2 
      * @returns {string[]}
@@ -42,7 +77,7 @@ class StringUtility {
      * @description Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-28
+     * @createdAt 2023.08.28
      * @param {string} data 
      * @returns {boolean}
      */
@@ -66,7 +101,7 @@ class StringUtility {
      * @description You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-28
+     * @createdAt 2023.08.28
      * @param {string} text 
      * @returns {string}
      */
