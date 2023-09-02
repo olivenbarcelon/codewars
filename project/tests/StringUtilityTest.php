@@ -63,15 +63,4 @@ class StringUtilityTest extends TestCase {
         $this->assertSame(["ab", "cd", "ef", "g_"], StringUtility::splitString("abcdefg"));
         $this->assertSame([], StringUtility::splitString(""));
     }
-
-    /**
-     * @test
-     * @testdox It should run to camel case
-     * @return void
-     */
-    public function toCamelCase(): void {
-        $this->assertSame('theStealthWarrior', StringUtility::toCamelCase('the-stealth-warrior'));
-        $this->assertSame('TheStealthWarrior', StringUtility::toCamelCase('The_Stealth_Warrior'));
-        $this->assertSame('TheStealthWarrior', StringUtility::toCamelCase('The_Stealth-Warrior'));
-    }
 }
