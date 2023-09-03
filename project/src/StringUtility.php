@@ -99,24 +99,4 @@ class StringUtility {
         // sort($arr);
         // return implode("", $arr);
     }
-
-    /**
-     * Title: Split Strings
-     * Description:
-     * Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
-     * @param string $str
-     * @return array
-     */
-    public static function splitString(string $str): array {
-        // My Solution
-        if(strlen($str) == 0) return [];
-        return array_map(function ($i) {
-            if(strlen($i) != 2) return $i . '_';
-            return $i;
-        }, str_split($str, 2));
-
-        // Codewars Solution (khlivnyuk)
-        // preg_match_all('/\w{2}/', $str . '_', $matches);
-        // return array_values($matches[0]);
-    }
 }

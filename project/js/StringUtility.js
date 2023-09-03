@@ -2,6 +2,20 @@
 
 class StringUtility {
     /**
+     * @title Split Strings
+     * @description Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.03
+     * @param {string} str 
+     * @returns {string[]}
+     */
+    static splitString = (str) => {
+        if(str === "") return [];
+        return str.concat("_").match(/\w{2}/g);
+    }
+
+    /**
      * @title Convert string to camel case
      * @description
      * Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case). The next words should be always capitalized.

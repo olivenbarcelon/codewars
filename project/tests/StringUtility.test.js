@@ -1,6 +1,13 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should run split string", () => {
+        expect(StringUtility.splitString("abc")).toEqual(["ab", "c_"]);
+        expect(StringUtility.splitString("abcdef")).toEqual(["ab", "cd", "ef"]);
+        expect(StringUtility.splitString("abcdefg")).toEqual(["ab", "cd", "ef", "g_"]);
+        expect(StringUtility.splitString("")).toEqual([]);
+    });
+
     it("It should run to camel case", () => {
         expect(StringUtility.toCamelCase("the-stealth-warrior")).toBe("theStealthWarrior");
         expect(StringUtility.toCamelCase("The_Stealth_Warrior")).toBe("TheStealthWarrior");
