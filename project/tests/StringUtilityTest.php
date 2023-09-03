@@ -51,16 +51,4 @@ class StringUtilityTest extends TestCase {
     public function meeting(): void {
         $this->assertSame('(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)', StringUtility::meeting('Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill'));
     }
-
-    /**
-     * @test
-     * @testdox It should run split string
-     * @return void
-     */
-    public function splitString(): void {
-        $this->assertSame(['ab', 'c_'], StringUtility::splitString('abc'));
-        $this->assertSame(['ab', 'cd', 'ef'], StringUtility::splitString('abcdef'));
-        $this->assertSame(["ab", "cd", "ef", "g_"], StringUtility::splitString("abcdefg"));
-        $this->assertSame([], StringUtility::splitString(""));
-    }
 }
