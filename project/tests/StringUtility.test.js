@@ -1,6 +1,11 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should run meeting", () => {
+        expect(StringUtility.meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+            .toBe("(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)");
+    });
+
     it("It should run split string", () => {
         expect(StringUtility.splitString("abc")).toEqual(["ab", "c_"]);
         expect(StringUtility.splitString("abcdef")).toEqual(["ab", "cd", "ef"]);

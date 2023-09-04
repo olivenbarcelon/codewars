@@ -42,13 +42,4 @@ class StringUtilityTest extends TestCase {
         $this->assertSame('32104', StringUtility::splitAlternate('01234', 2));
         $this->assertSame('20314', StringUtility::splitAlternate('01234', 3));
     }
-
-    /**
-     * @test
-     * @testdox It should run meeting
-     * @return void
-     */
-    public function meeting(): void {
-        $this->assertSame('(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)', StringUtility::meeting('Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill'));
-    }
 }
