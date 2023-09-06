@@ -1,6 +1,15 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should run split alternate", () => {
+        expect(StringUtility.splitAlternate('012345', 1)).toBe('135024');
+        expect(StringUtility.splitAlternate('012345', 2)).toBe('304152');
+        expect(StringUtility.splitAlternate('012345', 3)).toBe('012345');
+        expect(StringUtility.splitAlternate('01234', 1)).toBe('13024');
+        expect(StringUtility.splitAlternate('01234', 2)).toBe('32104');
+        expect(StringUtility.splitAlternate('01234', 3)).toBe('20314');
+    });
+
     it("It should run meeting", () => {
         expect(StringUtility.meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
             .toBe("(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)");

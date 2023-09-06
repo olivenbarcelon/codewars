@@ -2,6 +2,76 @@
 
 class StringUtility {
     /**
+     * @description Split text alternate
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.06
+     * @param {string} text 
+     * @param {int} n 
+     * @returns {string}
+     */
+    static splitAlternate = (text, n) => {
+        return StringUtility.#shiftAlternate(text, 0, n);
+    }
+
+    /**
+     * @description Shift or move value
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.06
+     * @param {string} text 
+     * @param {int} offset 
+     * @param {int} n 
+     * @returns {string}
+     */
+    static #shiftAlternate = (text, offset, n) => {
+        if(offset < n) {
+            let odd = StringUtility.#getValueAtOdd(text, 0);
+            let even = StringUtility.#getValueAtEven(text, 0);
+            return StringUtility.#shiftAlternate(odd + even, ++offset, n);
+        }
+        return text;
+    }
+
+    /**
+     * @description Get all value at index of odd
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.06
+     * @param {string} text 
+     * @param {int} i 
+     * @returns {string}
+     */
+    static #getValueAtOdd = (text, i) => {
+        if(i < text.length) {
+            if(i % 2 != 0) {
+                return text[i] + StringUtility.#getValueAtOdd(text, ++i);
+            }
+            return StringUtility.#getValueAtOdd(text, ++i);
+        }
+        return "";
+    }
+
+    /**
+     * @description Get all value at index of even
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.06
+     * @param {string} text 
+     * @param {int} i 
+     * @returns {string}
+     */
+    static #getValueAtEven = (text, i) => {
+        if(i < text.length) {
+            if(i % 2 == 0) {
+                return text[i] + StringUtility.#getValueAtEven(text, ++i);
+            }
+            return StringUtility.#getValueAtEven(text, ++i);
+        }
+        return "";
+    }
+
+    /**
      * @title Meeting
      * @description
      * John has invited some friends. His list is:
