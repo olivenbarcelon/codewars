@@ -2,12 +2,29 @@
 
 class StringUtility {
     /**
+     * @title Replace With Alphabet Position
+     * @description
+     * Welcome.
+     * In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+     * If anything in the text isn't a letter, ignore it and don't return it.
+     * "a" = 1, "b" = 2, etc.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.07
+     * @param {string} s
+     * @returns {string}
+     */
+    static alphabetPosition = (s) => {
+        return [...s.toLowerCase().matchAll(/[a-z]/g)].map(m => m[0].charCodeAt(0) - 96).join(" ");
+    }
+
+    /**
      * @description Split text alternate
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.06
-     * @param {string} text 
-     * @param {int} n 
+     * @param {string} text
+     * @param {int} n
      * @returns {string}
      */
     static splitAlternate = (text, n) => {
@@ -19,9 +36,9 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.06
-     * @param {string} text 
-     * @param {int} offset 
-     * @param {int} n 
+     * @param {string} text
+     * @param {int} offset
+     * @param {int} n
      * @returns {string}
      */
     static #shiftAlternate = (text, offset, n) => {
@@ -38,8 +55,8 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.06
-     * @param {string} text 
-     * @param {int} i 
+     * @param {string} text
+     * @param {int} i
      * @returns {string}
      */
     static #getValueAtOdd = (text, i) => {
@@ -57,8 +74,8 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.06
-     * @param {string} text 
-     * @param {int} i 
+     * @param {string} text
+     * @param {int} i
      * @returns {string}
      */
     static #getValueAtEven = (text, i) => {
@@ -86,7 +103,7 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.04
-     * @param {string} s 
+     * @param {string} s
      * @returns {string}
      */
     static meeting = (s) => {
@@ -99,7 +116,7 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.03
-     * @param {string} str 
+     * @param {string} str
      * @returns {string[]}
      */
     static splitString = (str) => {
@@ -114,7 +131,7 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.02
-     * @param {string} str 
+     * @param {string} str
      * @returns {string}
      */
     static toCamelCase = (str) => {
@@ -127,9 +144,9 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.02
-     * @param {RegExp} pattern 
-     * @param {Function} callback 
-     * @param {string} string 
+     * @param {RegExp} pattern
+     * @param {Function} callback
+     * @param {string} string
      * @returns {string}
      */
     static #pregReplaceCallback = (pattern, callback, string) => {
@@ -147,9 +164,9 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.09.01
-     * @param {int} r 
-     * @param {int} g 
-     * @param {int} b 
+     * @param {int} r
+     * @param {int} g
+     * @param {int} b
      * @returns {string}
      */
     static toHex = (r, g, b) => {
@@ -170,8 +187,8 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.08.31
-     * @param {string[]} array1 
-     * @param {string[]} array2 
+     * @param {string[]} array1
+     * @param {string[]} array2
      * @returns {string[]}
      */
     static inArray = (array1, array2) => {
@@ -184,7 +201,7 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.08.28
-     * @param {string} data 
+     * @param {string} data
      * @returns {boolean}
      */
     static exesAndOhs = (data) => {
@@ -208,7 +225,7 @@ class StringUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.08.28
-     * @param {string} text 
+     * @param {string} text
      * @returns {string}
      */
     static getMiddle = (text) => {
