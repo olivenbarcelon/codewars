@@ -1,6 +1,10 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should run alphabet position", () => {
+        expect(StringUtility.alphabetPosition("The sunset sets at twelve o\' clock.")).toBe("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
+    });
+
     it("It should run split alternate", () => {
         expect(StringUtility.splitAlternate('012345', 1)).toBe('135024');
         expect(StringUtility.splitAlternate('012345', 2)).toBe('304152');
