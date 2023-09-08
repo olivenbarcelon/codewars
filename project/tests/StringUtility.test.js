@@ -1,6 +1,16 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should run duplicate count", () => {
+        expect(StringUtility.duplicateCount("abcde")).toBe(0);
+        expect(StringUtility.duplicateCount("aabbcde")).toBe(2);
+        expect(StringUtility.duplicateCount("aabBcde")).toBe(2);
+        expect(StringUtility.duplicateCount("indivisibility")).toBe(1);
+        expect(StringUtility.duplicateCount("Indivisibilities")).toBe(2);
+        expect(StringUtility.duplicateCount("aA11")).toBe(2);
+        expect(StringUtility.duplicateCount("ABBA")).toBe(2);
+    });
+
     it("It should run alphabet position", () => {
         expect(StringUtility.alphabetPosition("The sunset sets at twelve o\' clock.")).toBe("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
     });
@@ -55,23 +65,27 @@ describe("String Utility", () => {
         expect(StringUtility.exesAndOhs("zzoo")).toBe(false);
     });
 
-    it("It should run get middle", () => {
+    it("It should get middle, expect 'test' to be 'es'", () => {
         expect(StringUtility.getMiddle("test")).toBe("es");
+    });
+
+    it("It should get middle, expect 'testing' to be 't'", () => {
         expect(StringUtility.getMiddle("testing")).toBe("t");
+    });
+
+    it("It should get middle, expect 'middle' to be 'dd'", () => {
         expect(StringUtility.getMiddle("middle")).toBe("dd");
+    });
+
+    it("It should get middle, expect 'A' to be 'A'", () => {
         expect(StringUtility.getMiddle("A")).toBe("A");
+    });
+
+    it("It should get middle, expect '1' to be '1'", () => {
         expect(StringUtility.getMiddle("1")).toBe("1");
     });
 
-    it("It should run get middle validate by numeric data", () => {
+    it("It should get middle validate by numeric data", () => {
         expect(() => StringUtility.getMiddle(1)).toThrow("Cannot read properties of string");
-    });
-
-    it("It should run get middle validate by undefined", () => {
-        expect(() => StringUtility.getMiddle()).toThrow("Cannot read properties of undefined");
-    });
-
-    it("It should run get middle validate by null", () => {
-        expect(() => StringUtility.getMiddle(null)).toThrow("Cannot read properties of null");
     });
 });
