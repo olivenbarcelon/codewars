@@ -2,6 +2,55 @@
 
 class StringUtility {
     /**
+     * @title Counting Duplicates
+     * @description
+     * Count the number of Duplicates
+     * Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.08
+     * @param {string} text
+     * @returns {int}
+     */
+    static duplicateCount = (text) => {
+        return Object.values(this.#arrayCountValues(Array.from(text.toLowerCase()))).filter(f => f > 1).length;
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.08
+     * @param {any[]} arr
+     * @returns {object}
+     */
+    static #arrayCountValues = (arr) => {
+        return this.#arrayCountValue(arr, 0);
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.08
+     * @param {any[]} arr
+     * @param {int} index
+     * @param {object} freqs
+     * @returns {object}
+     */
+    static #arrayCountValue = (arr, index, freqs = {}) => {
+        if(index < arr.length) {
+            let v = arr[index];
+            if(freqs[v]) {
+                freqs[v] += 1;
+            }
+            else {
+                freqs[v] = 1;
+            }
+            this.#arrayCountValue(arr, ++index, freqs);
+        }
+        return freqs;
+    }
+
+    /**
      * @title Replace With Alphabet Position
      * @description
      * Welcome.
