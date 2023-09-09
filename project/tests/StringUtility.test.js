@@ -57,12 +57,24 @@ describe("String Utility", () => {
         expect(StringUtility.inArray(['tarp', 'mice', 'bull'], ["lively", "alive", "harp", "sharp", "armstrong"])).toEqual([]);
     });
 
-    it("It should run exes and ohs", () => {
-        expect(StringUtility.exesAndOhs("ooxx")).toBe(true);
-        expect(StringUtility.exesAndOhs("xooxx")).toBe(false);
-        expect(StringUtility.exesAndOhs("ooxXm")).toBe(true);
-        expect(StringUtility.exesAndOhs("zpzpzpp")).toBe(true);
-        expect(StringUtility.exesAndOhs("zzoo")).toBe(false);
+    it("It should run exes and ohs, expect ooxx to be true", () => {
+        expect(StringUtility.exesAndOhs("ooxx")).toBeTruthy();
+    });
+
+    it("It should run exes and ohs, expect xooxx to be false", () => {
+        expect(StringUtility.exesAndOhs("xooxx")).toBeFalsy();
+    });
+
+    it("It should run exes and ohs, expect ooxXm to be true", () => {
+        expect(StringUtility.exesAndOhs("ooxXm")).toBeTruthy();
+    });
+
+    it("It should run exes and ohs, expect zpzpzp to be true", () => {
+        expect(StringUtility.exesAndOhs("zpzpzpp")).toBeTruthy();
+    });
+
+    it("It should run exes and ohs, expect zzoo to be false", () => {
+        expect(StringUtility.exesAndOhs("zzoo")).toBeFalsy();
     });
 
     it("It should get middle, expect 'test' to be 'es'", () => {

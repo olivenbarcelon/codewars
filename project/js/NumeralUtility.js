@@ -2,6 +2,28 @@
 
 class NumeralUtility {
     /**
+     * @title Does my number look big in this?
+     * @description A Narcissistic Number (or Armstrong Number) is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.09
+     * @param {int} n
+     * @param {int} i
+     * @param {int} result
+     * @returns {boolean}
+     */
+    static isArmstrong = (n, i = 0, result = 0) => {
+        let number = new String(n);
+        let length = number.length;
+        if(i < length) {
+            result += parseInt(number[i])**length;
+            return this.isArmstrong(n, ++i, result);
+        }
+
+        return result == parseInt(number);
+    }
+
+    /**
      * @title Mean Square Error
      * @description
      * Complete the function that
@@ -11,7 +33,7 @@ class NumeralUtility {
      * and returns the average of those squared absolute value difference between each member pair.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-30
+     * @createdAt 2023.08.30
      * @param {int[]} a 
      * @param {int[]} b 
      * @returns {int|float}
@@ -32,7 +54,7 @@ class NumeralUtility {
      * Remember that there can't be more than 3 identical symbols in a row.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-29
+     * @createdAt 2023.08.29
      * @param {int} number 
      * @returns {string}
      */
@@ -67,7 +89,7 @@ class NumeralUtility {
      * @description Welcome. In this kata, you are asked to square every digit of a number and concatenate them. Note: The function accepts an integer and returns an integer.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-27
+     * @createdAt 2023.08.27
      * @param {int} data 
      * @returns {int}
      */
@@ -92,7 +114,7 @@ class NumeralUtility {
      * Note: n, p will always be given as strictly positive integers.
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023-08-26
+     * @createdAt 2023.08.26
      * @param {int} n 
      * @param {int} p 
      * @returns {int}
