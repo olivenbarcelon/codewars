@@ -2,6 +2,19 @@
 
 class NumeralUtility {
     /**
+     * @title List Filtering
+     * @description In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.11
+     * @param {any[]} arr
+     * @returns {int[]}
+     */
+    static filterInt = (arr) => {
+        return Array.from(arr).filter(f => typeof(f) === "number");
+    }
+
+    /**
      * @title Does my number look big in this?
      * @description A Narcissistic Number (or Armstrong Number) is a positive number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
      * @version 0.0.1
