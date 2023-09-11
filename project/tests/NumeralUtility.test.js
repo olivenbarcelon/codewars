@@ -1,6 +1,10 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should filter int, expect [1, 2, 'a', 'b'] to equal [1, 2]", () => {
+        expect(NumeralUtility.filterInt([1, 2, "a", "b"])).toEqual([1, 2]);
+    });
+
     it("It should armstrong, expect 153 to be true", () => {
         expect(NumeralUtility.isArmstrong(153)).toBeTruthy();
     });
