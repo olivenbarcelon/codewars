@@ -46,12 +46,24 @@ describe("String Utility", () => {
         expect(StringUtility.toCamelCase("The_Stealth-Warrior")).toBe("TheStealthWarrior");
     });
 
-    it("It should to hex", () => {
-        expect(StringUtility.toHex(255, 255, 255)).toBe('FFFFFF');
-        expect(StringUtility.toHex(255, 255, 300)).toBe('FFFFFF');
-        expect(StringUtility.toHex(0, 0, 0)).toBe('000000');
-        expect(StringUtility.toHex(-255, -255, -255)).toBe('000000');
-        expect(StringUtility.toHex(148, 0, 211)).toBe('9400D3');
+    it("It should to hex, expect 255, 255, 255 to be 'FFFFFF", () => {
+        expect(StringUtility.toHex(255, 255, 255)).toBe("FFFFFF");
+    });
+
+    it("It should to hex, expect 255, 255, 300 to be 'FFFFFF'", () => {
+        expect(StringUtility.toHex(255, 255, 300)).toBe("FFFFFF");
+    });
+
+    it("It should to hex, expect 0, 0, 0 to be '000000'", () => {
+        expect(StringUtility.toHex(0, 0, 0)).toBe("000000");
+    });
+
+    it("It should to hex, expect -255, -255, -255 to be '000000'", () => {
+        expect(StringUtility.toHex(-255, -255, -255)).toBe("000000");
+    });
+
+    it("It should to hex, expect 148, 0, 211 to be '9400D3'", () => {
+        expect(StringUtility.toHex(148, 0, 211)).toBe("9400D3");
     });
 
     it("It should in array, expect ['arp', 'live', 'strong'], ['lively', 'alive', 'harp', 'sharp', 'armstrong'] to equal ['arp', 'live', 'strong']", () => {
