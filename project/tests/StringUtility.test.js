@@ -1,6 +1,10 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should mumbling, expect 'abcd' to be 'A-Bb-Ccc-Dddd'", () => {
+        expect(StringUtility.mumbling("abcd")).toBe("A-Bb-Ccc-Dddd");
+    });
+
     it("It should remove vowel, expect 'This website is for losers LOL!' to be 'Ths wbst s fr lsrs LL!'", () => {
         expect(StringUtility.removeVowel("This website is for losers LOL!")).toBe("Ths wbst s fr lsrs LL!");
     });
@@ -40,9 +44,15 @@ describe("String Utility", () => {
         expect(StringUtility.splitString("")).toEqual([]);
     });
 
-    it("It should to camel case", () => {
+    it("It should to camel case, expect 'the-stealth-warrior' to be 'theStealthWarrior'", () => {
         expect(StringUtility.toCamelCase("the-stealth-warrior")).toBe("theStealthWarrior");
+    });
+
+    it("It should to camel case, expect 'The_Stealth_Warrior' to be 'TheStealthWarrior'", () => {
         expect(StringUtility.toCamelCase("The_Stealth_Warrior")).toBe("TheStealthWarrior");
+    });
+
+    it("It should to camel case, expect 'The_Stealth-Warrior' to be 'TheStealthWarrior'", () => {
         expect(StringUtility.toCamelCase("The_Stealth-Warrior")).toBe("TheStealthWarrior");
     });
 
