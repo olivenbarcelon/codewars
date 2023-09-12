@@ -2,6 +2,23 @@
 
 class StringUtility {
     /**
+     * @title Mumbling
+     * @description This time no story, no theory. The examples below show you how to write function accum
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.12
+     * @param {string} str
+     * @returns {string}
+     */
+    static mumbling = (str) => {
+        return Object.entries(Array.from(str)).map(entry => {
+            let [key, value] = entry;
+            let uc = value.toUpperCase();
+            return uc.padEnd(Number.parseInt(key) + 1, value.toLowerCase());
+        }).join("-");
+    }
+
+    /**
      * @title Disemvowel Trolls
      * @description
      * Trolls are attacking your comment section!
