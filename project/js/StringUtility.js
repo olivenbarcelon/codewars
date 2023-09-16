@@ -2,6 +2,18 @@
 
 class StringUtility {
     /**
+     * @title String ends with?
+     * @description Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.16
+     * @param {string} str1
+     * @param {string} str2
+     * @returns {boolean}
+     */
+    static endsWith = (str, ending) => str.endsWith(ending);
+
+    /**
      * @title Mumbling
      * @description This time no story, no theory. The examples below show you how to write function accum
      * @version 0.0.1

@@ -1,6 +1,10 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should ends with, expect 'abc', 'bc' to be true", () => {
+        expect(StringUtility.endsWith("abc", "bc")).toBeTruthy();
+    });
+
     it("It should mumbling, expect 'abcd' to be 'A-Bb-Ccc-Dddd'", () => {
         expect(StringUtility.mumbling("abcd")).toBe("A-Bb-Ccc-Dddd");
     });
@@ -37,10 +41,19 @@ describe("String Utility", () => {
             .toBe("(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)");
     });
 
-    it("It should split string", () => {
+    it("It should split string, expect 'abc' to equal ['ab', 'c_']", () => {
         expect(StringUtility.splitString("abc")).toEqual(["ab", "c_"]);
+    });
+
+    it("It should split string, expect 'abcdef' to equal ['ab', 'cd', 'ef']", () => {
         expect(StringUtility.splitString("abcdef")).toEqual(["ab", "cd", "ef"]);
+    });
+
+    it("It should split string, expect 'abcdefg' to equal ['ab', 'cd', 'ef', 'g_']", () => {
         expect(StringUtility.splitString("abcdefg")).toEqual(["ab", "cd", "ef", "g_"]);
+    });
+
+    it("It should split string, expect '' to equal []", () => {
         expect(StringUtility.splitString("")).toEqual([]);
     });
 
