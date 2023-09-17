@@ -1,6 +1,10 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should valid braces, expect '(){}[]' to be true", () => {
+        expect(StringUtility.validBraces("(){}[]")).toBeTruthy();
+    });
+
     it("It should ends with, expect 'abc', 'bc' to be true", () => {
         expect(StringUtility.endsWith("abc", "bc")).toBeTruthy();
     });
@@ -36,7 +40,7 @@ describe("String Utility", () => {
         expect(StringUtility.splitAlternate('01234', 3)).toBe('20314');
     });
 
-    it("It should meeting", () => {
+    it("It should meeting, expect 'Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill' to be '(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)'", () => {
         expect(StringUtility.meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
             .toBe("(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)");
     });
