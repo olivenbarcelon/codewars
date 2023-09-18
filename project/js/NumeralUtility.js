@@ -128,6 +128,7 @@ class NumeralUtility {
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.08.26
+     * @updatedAt 2023.09.18
      * @param {int} n 
      * @param {int} p 
      * @returns {int}
@@ -139,8 +140,7 @@ class NumeralUtility {
             sumOfPow += Math.pow(input[i], i + p);
         }
         let k = sumOfPow / n;
-
-        return k >= 1 ? k : -1;
+        return Number.isInteger(k) ? k : -1;
     }
 }
 
