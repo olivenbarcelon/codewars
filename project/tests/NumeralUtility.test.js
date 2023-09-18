@@ -69,6 +69,10 @@ describe("Numeral Utility", () => {
         expect(NumeralUtility.squareDigit(0)).toBe(0);
     });
 
+    it("It should dig pow, expect 3263.10819218804, 5 to equal -1", () => {
+        expect(NumeralUtility.digPow(46288, 5)).toBe(-1);
+    });
+
     it("It should dig pow, expect 89, 2 to be 1", () => {
         expect(NumeralUtility.digPow(89, 1)).toBe(1);
     });
