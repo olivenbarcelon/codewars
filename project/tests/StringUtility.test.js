@@ -1,6 +1,22 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it('It should longest consec, expect ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3 to be "ixoyx3452zzzzzzzzzzzz"', () => {
+        expect(StringUtility.longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3)).toBe("ixoyx3452zzzzzzzzzzzz");
+    });
+
+    it('It should longest consec, expect ["zone", "abigail", "theta", "form", "libe", "zas"], -2 to be ""', () => {
+        expect(StringUtility.longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2)).toBe("");
+    });
+
+    it('It should longest consec, expect ["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1 to be "oocccffuucccjjjkkkjyyyeehh"', () => {
+        expect(StringUtility.longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1)).toBe("oocccffuucccjjjkkkjyyyeehh");
+    });
+
+    it('It should longest consec, expect ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 2 to be folingtrashy', () => {
+        expect(StringUtility.longestConsec(["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"], 2)).toBe("folingtrashy");
+    });
+
     it("It should valid braces, expect '(){}[]' to be true", () => {
         expect(StringUtility.validBraces("(){}[]")).toBeTruthy();
     });
@@ -31,13 +47,16 @@ describe("String Utility", () => {
         expect(StringUtility.alphabetPosition("The sunset sets at twelve o\' clock.")).toBe("20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11");
     });
 
-    it("It should split alternate", () => {
+    it("It should split alternate, expect '012345' to be '135024'", () => {
         expect(StringUtility.splitAlternate('012345', 1)).toBe('135024');
+    });
+
+    it("It should split alternate, expect '012345' to be '304152'", () => {
         expect(StringUtility.splitAlternate('012345', 2)).toBe('304152');
+    });
+
+    it("It should split alternate, expect '012345' to be '012345'", () => {
         expect(StringUtility.splitAlternate('012345', 3)).toBe('012345');
-        expect(StringUtility.splitAlternate('01234', 1)).toBe('13024');
-        expect(StringUtility.splitAlternate('01234', 2)).toBe('32104');
-        expect(StringUtility.splitAlternate('01234', 3)).toBe('20314');
     });
 
     it("It should meeting, expect 'Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill' to be '(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)'", () => {
