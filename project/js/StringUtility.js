@@ -2,6 +2,36 @@
 
 class StringUtility {
     /**
+     * @title Consecutive strings
+     * @description
+     * You are given an array(list) strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.19
+     * @param {string[]} strarr
+     * @param {int} k
+     * @returns {string}
+     */
+    static longestConsec = (strarr, k) => {
+        if(k <= 0) {
+            return "";
+        }
+        else if(k == 1) {
+            return strarr.reduce((longest, currentWord) => currentWord.length > longest.length ? currentWord : longest, "");
+        }
+        let a = [];
+        for(let i = 0;i < strarr.length - (k - 1);i++) {
+            let s = "";
+            for(let j = 0;j < k;j++) {
+                s += strarr[i + j];
+            }
+            a.push(s);
+        }
+        let longest = a.reduce((longest, currentWord) => currentWord.length > longest.length ? currentWord : longest, "");
+        return longest;
+    }
+
+    /**
      * @title Valid Braces
      * @description
      * Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
