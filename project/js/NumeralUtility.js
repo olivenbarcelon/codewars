@@ -1,6 +1,51 @@
 "use strict";
+const ObjectUtility = require("./ObjectUtility");
 
 class NumeralUtility {
+    /**
+     * @title Greed is Good
+     * @description
+     * Greed is a dice game played with five six-sided dice. Your mission, should you choose to accept it, is to score a throw according to these rules. You will always be given an array with five six-sided dice values.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.20
+     * @param {int[]} arr
+     * @returns {int}
+     */
+    static greedIsGood = (arr) => {
+        let o = ObjectUtility.arrayCountValues(arr);
+        let score = [1000, 200, 300, 400, 500, 600];
+        let sum = 0;
+        Object.entries(o).filter(entry => entry[1] >= 3 || entry[0] == 1 || entry[0] == 5)
+            .map(entry => {
+                let c = 0;
+                let k = entry[0];
+                let v = entry[1];
+                if(v == 3 || (k != 1 && k != 5)) {
+                    c = score[k - 1];
+                }
+                else if(k == 1) {
+                    if(v < 3) {
+                        c = v * 100;
+                    }
+                    else {
+                        c = score[k - 1] + v % 3 * 100;
+                    }
+                }
+                else {
+                    if(v < 3) {
+                        c = v * 50;
+                    }
+                    else {
+                        c = score[k - 1] + v % 3 * 50;
+                    }
+                }
+                return c;
+            })
+            .forEach(e => sum += e);
+        return sum;
+    }
+
     /**
      * @title List Filtering
      * @description In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.

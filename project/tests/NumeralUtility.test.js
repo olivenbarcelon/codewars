@@ -1,6 +1,22 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should greed is good, expect [5, 5, 5, 5, 5] to be 600", () => {
+        expect(NumeralUtility.greedIsGood([5, 5, 5, 5, 5])).toBe(600);
+    });
+
+    it("It should greed is good, expect [5, 1, 3, 4, 1] to be 250", () => {
+        expect(NumeralUtility.greedIsGood([5, 1, 3, 4, 1])).toBe(250);
+    });
+
+    it("It should greed is good, expect [1, 1, 1, 3, 1] to be 1100", () => {
+        expect(NumeralUtility.greedIsGood([1, 1, 1, 3, 1])).toBe(1100);
+    });
+
+    it("It should greed is good, expect [2, 4, 4, 5, 4] to be 450", () => {
+        expect(NumeralUtility.greedIsGood([2, 4, 4, 5, 4])).toBe(450);
+    });
+
     it("It should filter int, expect [1, 2, 'a', 'b'] to equal [1, 2]", () => {
         expect(NumeralUtility.filterInt([1, 2, "a", "b"])).toEqual([1, 2]);
     });
