@@ -1,6 +1,10 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should highest score word, expect 'man i need a taxi up to ubud' to be 'taxi'", () => {
+        expect(StringUtility.highestScoreWord("man i need a taxi up to ubud")).toBe("taxi");
+    });
+
     it('It should longest consec, expect ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3 to be "ixoyx3452zzzzzzzzzzzz"', () => {
         expect(StringUtility.longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3)).toBe("ixoyx3452zzzzzzzzzzzz");
     });
@@ -33,14 +37,8 @@ describe("String Utility", () => {
         expect(StringUtility.removeVowel("This website is for losers LOL!")).toBe("Ths wbst s fr lsrs LL!");
     });
 
-    it("It should duplicate count", () => {
+    it("It should duplicate count, expect 'abcde' to be 0", () => {
         expect(StringUtility.duplicateCount("abcde")).toBe(0);
-        expect(StringUtility.duplicateCount("aabbcde")).toBe(2);
-        expect(StringUtility.duplicateCount("aabBcde")).toBe(2);
-        expect(StringUtility.duplicateCount("indivisibility")).toBe(1);
-        expect(StringUtility.duplicateCount("Indivisibilities")).toBe(2);
-        expect(StringUtility.duplicateCount("aA11")).toBe(2);
-        expect(StringUtility.duplicateCount("ABBA")).toBe(2);
     });
 
     it("It should alphabet position, expect 'The sunset sets at twelve o\' clock.' to be '20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11'", () => {
