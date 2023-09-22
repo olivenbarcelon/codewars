@@ -1,6 +1,26 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should prime, expect 25 to be false", () => {
+        expect(NumeralUtility.isPrime(25)).toBeFalsy();
+    });
+
+    it("It should prime, expect -1 to be false", () => {
+        expect(NumeralUtility.isPrime(-1)).toBeFalsy();
+    });
+
+    it("It should prime, expect 5099 to be true", () => {
+        expect(NumeralUtility.isPrime(5099)).toBeTruthy();
+    });
+
+    it("It should prime, expect 2 to be true", () => {
+        expect(NumeralUtility.isPrime(2)).toBeTruthy();
+    });
+
+    it("It should prime, expect 4 to be false", () => {
+        expect(NumeralUtility.isPrime(4)).toBeFalsy();
+    });
+
     it("It should greed is good, expect [5, 5, 5, 5, 5] to be 600", () => {
         expect(NumeralUtility.greedIsGood([5, 5, 5, 5, 5])).toBe(600);
     });
