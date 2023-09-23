@@ -1,6 +1,14 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should comp same, expect [121, 144, 19, 161, 19, 144, 19, 11], [132, 14641, 20736, 361, 25921, 361, 20736, 361] to be false", () => {
+        expect(NumeralUtility.compSame([121, 144, 19, 161, 19, 144, 19, 11], [132, 14641, 20736, 361, 25921, 361, 20736, 361])).toBeFalsy();
+    });
+
+    it("It should comp same, expect [121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361] to be true", () => {
+        expect(NumeralUtility.compSame([121, 144, 19, 161, 19, 144, 19, 11], [121, 14641, 20736, 361, 25921, 361, 20736, 361])).toBeTruthy();
+    });
+
     it("It should prime, expect 25 to be false", () => {
         expect(NumeralUtility.isPrime(25)).toBeFalsy();
     });
