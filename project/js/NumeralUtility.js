@@ -3,6 +3,21 @@ const ObjectUtility = require("./ObjectUtility");
 
 class NumeralUtility {
     /**
+     * @title Are they the "same"?
+     * @description
+     * Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.23
+     * @param {int[]} a
+     * @param {int[]} b
+     * @returns {boolean}
+     */
+    static compSame = (a, b) => {
+        return !!a && !!b && a.sort().join() == b.map(m => Math.sqrt(m)).sort().join();
+    }
+
+    /**
      * @title Is a number prime
      * @description
      * Define a function that takes an integer argument and returns a logical value true or false depending on if the integer is a prime.
