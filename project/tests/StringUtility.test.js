@@ -1,6 +1,22 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should find sum, expect '1', '2' to be '3'", () => {
+        expect(StringUtility.findSum("1", "2")).toBe("3");
+    });
+
+    it("It should find sum, expect '', '2' to be '2'", () => {
+        expect(StringUtility.findSum("", "2")).toBe("2");
+    });
+
+    it("It should find sum, expect '1', '' to be '1'", () => {
+        expect(StringUtility.findSum("1", "")).toBe("1");
+    });
+
+    it("It should find sum, expect 'a', 'a' to be 'NaN'", () => {
+        expect(StringUtility.findSum("a", "a")).toBe("NaN");
+    });
+
     it("It should highest score word, expect 'man i need a taxi up to ubud' to be 'taxi'", () => {
         expect(StringUtility.highestScoreWord("man i need a taxi up to ubud")).toBe("taxi");
     });
