@@ -3,6 +3,38 @@ const ObjectUtility = require("./ObjectUtility");
 
 class StringUtility {
     /**
+     * @title Sum Strings as Numbers
+     * @description Given the string representations of two integers, return the string representation of the sum of those integers.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.24
+     * @param {string} a
+     * @param {string} b
+     * @returns {string}
+     */
+    static findSum = (a, b) => {
+        if(a.length == 0 || b.length == 0) {
+            if(a.length > b.length) {
+                return a;
+            }
+            else {
+                return b;
+            }
+        }
+        let s1;
+        let s2;
+        let result;
+        if(/^[(0-9).(0-9)]*$/.test(a)) {
+            s1 = BigInt(a);
+        }
+        if(/^[(0-9).(0-9)]*$/.test(b)) {
+            s2 = BigInt(b);
+        }
+        result = s1 + s2;
+        return result.toString();
+    }
+
+    /**
      * @title Highest Scoring Word
      * @description
      * Given a string of words, you need to find the highest scoring word.
