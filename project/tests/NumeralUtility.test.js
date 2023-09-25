@@ -1,6 +1,10 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should fibonacci, expect 9 to equal [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]", () => {
+        expect(NumeralUtility.fibonacci(9)).toEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
+    });
+
     it("It should comp same, expect [121, 144, 19, 161, 19, 144, 19, 11], [132, 14641, 20736, 361, 25921, 361, 20736, 361] to be false", () => {
         expect(NumeralUtility.compSame([121, 144, 19, 161, 19, 144, 19, 11], [132, 14641, 20736, 361, 25921, 361, 20736, 361])).toBeFalsy();
     });
