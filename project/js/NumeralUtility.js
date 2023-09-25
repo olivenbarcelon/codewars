@@ -3,6 +3,26 @@ const ObjectUtility = require("./ObjectUtility");
 
 class NumeralUtility {
     /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.09.25
+     * @param {int} n
+     * @returns {int[]}
+     */
+    static fibonacci = (n) => {
+        let f = new Array();
+        for(let i = 0;i <= n;i++) {
+            if(i == 0 || i == 1) {
+                f.push(i);
+            }
+            else {
+                f.push(f[i - 2] + f[i - 1]);
+            }
+        }
+        return f;
+    }
+
+    /**
      * @title Are they the "same"?
      * @description
      * Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
