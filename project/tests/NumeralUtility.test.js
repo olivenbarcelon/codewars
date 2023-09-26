@@ -1,6 +1,10 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should perimeter, expect 9 to be 80", () => {
+        expect(NumeralUtility.perimeter(5)).toBe(80);
+    });
+
     it("It should fibonacci, expect 9 to equal [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]", () => {
         expect(NumeralUtility.fibonacci(9)).toEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]);
     });
