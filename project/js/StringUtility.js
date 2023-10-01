@@ -3,6 +3,27 @@ const ObjectUtility = require("./ObjectUtility");
 
 class StringUtility {
     /**
+     * @title The Hashtag Generator
+     * @description
+     * The marketing team is spending way too much time typing in hashtags.
+     * Let's help them with our own Hashtag Generator!
+     * Here's the deal:
+     * It must start with a hashtag (#).
+     * All words must have their first letter capitalized.
+     * If the final result is longer than 140 chars it must return false.
+     * If the input or the result is an empty string it must return false.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.01
+     * @param {string} str
+     * @returns {string|boolean}
+     */
+    static generateHashtag = (str) => {
+        let hashtag = str.split(' ').reduce((tag, word) => tag + word.charAt(0).toUpperCase() + word.substring(1), '#');
+        return hashtag.length == 1 || hashtag.length > 140 ? false : hashtag;
+    }
+
+    /**
      * @title Sum Strings as Numbers
      * @description Given the string representations of two integers, return the string representation of the sum of those integers.
      * @version 0.0.1
