@@ -1,6 +1,27 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should generate hashtag, expect '' to be false", () => {
+        expect(StringUtility.generateHashtag("")).toBeFalsy();
+    });
+
+    it("It should generate hashtag, expect 'Lorem ipsum dolor sit amet...' to be false", () => {
+        expect(StringUtility.generateHashtag(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+            + "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+            + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+            + "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        )).toBeFalsy();
+    });
+
+    it("It should generate hashtag, expect '    Hello     World   ' to be '#HelloWorld'", () => {
+        expect(StringUtility.generateHashtag("    Hello     World   ")).toBe("#HelloWorld");
+    });
+
+    it("It should generate hashtag, expect ' Hello there thanks for trying my Kata' to be '#HelloThereThanksForTryingMyKata'", () => {
+        expect(StringUtility.generateHashtag(" Hello there thanks for trying my Kata")).toBe("#HelloThereThanksForTryingMyKata");
+    });
+
     it("It should find sum, expect '1', '2' to be '3'", () => {
         expect(StringUtility.findSum("1", "2")).toBe("3");
     });
