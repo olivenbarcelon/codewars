@@ -1,6 +1,26 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should string incremental, expect 'fo99obar99' to be 'fo99obar100'", () => {
+        expect(StringUtility.stringIncrementer("fo99obar99")).toBe("fo99obar100");
+    });
+
+    it("It should string incremental, expect 'foo9' to be 'foo10'", () => {
+        expect(StringUtility.stringIncrementer("foo9")).toBe("foo10");
+    });
+
+    it("It should string incremental, expect 'foo0042' to be 'foo0043'", () => {
+        expect(StringUtility.stringIncrementer("foo0042")).toBe("foo0043");
+    });
+
+    it("It should string incremental, expect 'foobar23' to be 'foobar24'", () => {
+        expect(StringUtility.stringIncrementer("foobar23")).toBe("foobar24");
+    });
+
+    it("It should string incremental, expect 'foo' to be 'foo1'", () => {
+        expect(StringUtility.stringIncrementer("foo")).toBe("foo1");
+    });
+
     it("It should generate hashtag, expect '' to be false", () => {
         expect(StringUtility.generateHashtag("")).toBeFalsy();
     });
