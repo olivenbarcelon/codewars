@@ -3,6 +3,20 @@ const ObjectUtility = require("./ObjectUtility");
 
 class StringUtility {
     /**
+     * @title String incrementer
+     * @description
+     * Your job is to write a function which increments a string, to create a new string.
+     * If the string already ends with a number, the number should be incremented by 1.
+     * If the string does not end with a number. the number 1 should be appended to the new string.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.02
+     * @param {string} str
+     * @returns {string}
+     */
+    static stringIncrementer = (str) => str.replace(/[0-8]?9*$/, val => ++val);
+
+    /**
      * @title The Hashtag Generator
      * @description
      * The marketing team is spending way too much time typing in hashtags.
