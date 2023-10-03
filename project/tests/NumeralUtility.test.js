@@ -1,6 +1,10 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should josephus survivor, expect 7,3 to be 4", () => {
+        expect(NumeralUtility.josephusSurvivor(7, 3)).toBe(4);
+    });
+
     it("It should perimeter, expect 9 to be 80", () => {
         expect(NumeralUtility.perimeter(5)).toBe(80);
     });
