@@ -3,6 +3,18 @@ const ObjectUtility = require("./ObjectUtility");
 
 class NumeralUtility {
     /**
+     * @title Josephus Survivor
+     * @description In this kata you have to correctly return who is the "survivor", ie: the last element of a Josephus permutation.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.03
+     * @param {int} n
+     * @param {int} k
+     * @returns {int}
+     */
+    static josephusSurvivor = (n, k) => n < 1 ? 1 : (this.josephusSurvivor(n - 1, k) + --k) % n + 1;
+
+    /**
      * @title Perimeter of squares in a rectangle
      * @description
      * The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80
