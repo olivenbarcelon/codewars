@@ -1,6 +1,18 @@
 const NumeralUtility = require('../js/NumeralUtility');
 
 describe("Numeral Utility", () => {
+    it("It should factorial, expect null to be '1'", () => {
+        expect(NumeralUtility.factorial(null)).toBe("1");
+    });
+
+    it("It should factorial, expect 15 to be '1307674368000'", () => {
+        expect(NumeralUtility.factorial(15)).toBe("1307674368000");
+    });
+
+    it("It should factorial, expect 20 to be '2432902008176640000'", () => {
+        expect(NumeralUtility.factorial(20)).toBe("2432902008176640000");
+    });
+
     it("It should josephus survivor, expect 7,3 to be 4", () => {
         expect(NumeralUtility.josephusSurvivor(7, 3)).toBe(4);
     });
