@@ -3,6 +3,22 @@ const ObjectUtility = require("./ObjectUtility");
 
 class StringUtility {
     /**
+     * @title Objectify a URL Query String
+     * @description
+     * In this kata, we want to convert a URL query string into a nested object. The query string will contain parameters that may or may not have embedded dots ('.'), and these dots will be used to break up the properties into the nested object.
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.05
+     * @param {string} query
+     * @returns {Object}
+     */
+    static convertQueryToMap = query => query.split(`&`).map(val => val.split(/[=.]/)).reduce((obj, arr) => {
+        const value = arr.pop();
+        arr.reduce((pre, val, idx) => pre[val] = ++idx === arr.length ? decodeURIComponent(value) : pre[val] || {}, obj);
+        return obj;
+    }, {});
+
+    /**
      * @title String incrementer
      * @description
      * Your job is to write a function which increments a string, to create a new string.

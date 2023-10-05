@@ -1,6 +1,19 @@
 const StringUtility = require('../js/StringUtility');
 
 describe("String Utility", () => {
+    it("It should convert query to map, expect user.name.firstname=Bob&user.name.lastname=Smith&user.favoritecolor=Light%20Blue to equal object", () => {
+        expect(StringUtility.convertQueryToMap("user.name.firstname=Bob&user.name.lastname=Smith&user.favoritecolor=Light%20Blue"))
+            .toEqual({
+                'user': {
+                    'name': {
+                    'firstname': 'Bob',
+                    'lastname': 'Smith'
+                    },
+                    'favoritecolor': 'Light Blue'
+                }
+            });
+    });
+
     it("It should string incremental, expect 'fo99obar99' to be 'fo99obar100'", () => {
         expect(StringUtility.stringIncrementer("fo99obar99")).toBe("fo99obar100");
     });
