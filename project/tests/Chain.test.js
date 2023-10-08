@@ -7,6 +7,10 @@ beforeAll(() => {
 });
 
 describe("Chain", () => {
+    it("It should execute sum, expect 1, 2 to be 3", () => {
+        expect(chain.sum(1, 2).minusOne().execute()).toBe(2);
+    });
+
     it("It should execute sum, double and add one, expect 1, 2 to be 3 double to be 6 add one to be 7", () => {
         chain.sum(1, 2);
         expect(chain.execute()).toBe(3);
