@@ -18,6 +18,11 @@ class Chain {
         return this;
     }
 
+    minusOne = () => {
+        this.result -= 1;
+        return this;
+    }
+
     execute = () => this.result;
 }
 
