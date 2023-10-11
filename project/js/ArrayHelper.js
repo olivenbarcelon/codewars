@@ -4,6 +4,47 @@ class ArrayHelper {
     /**
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.11
+     * @param {int[]} arr
+     * @returns {int}
+     */
+    static findPeak = (arr) => {
+        let length = arr.length;
+        return this.#findPeakUtil(arr, 0, length, length);
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.11
+     * @param {int[]} arr
+     * @param {int} low
+     * @param {int} high
+     * @param {int} n
+     * @returns {int}
+     */
+    static #findPeakUtil = (arr, low, high, n) => {
+        let l = low;
+        let r = high - 1;
+        let mid;
+        while(l <= r) {
+            mid = (l + r) >> 1;
+            if((mid == 0 || arr[mid - 1] <= arr[mid]) && (mid == n - 1 || arr[mid + 1] <= arr[mid])) {
+                break;
+            }
+            if(mid > 0 && arr[mid - 1] > arr[mid]) {
+                r = mid - 1; 
+            }
+            else {
+                l = mid + 1;
+            }
+        }
+        return mid; 
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.10
      * @param {int[]} arr
      * @returns {int[]}
