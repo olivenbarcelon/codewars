@@ -27,6 +27,14 @@ class ArrayList {
         this.#array[this.#index++] = element;
     }
 
+    get = (index) => {
+        console.log(this.#index);
+        if(index < 0 || index >= this.#index) {
+            throw new Error(`Index ${index} out of bounds for length ${this.#index}`);
+        }
+        return this.#array[index];
+    }
+
     /**
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
