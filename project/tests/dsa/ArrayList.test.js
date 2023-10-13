@@ -8,6 +8,20 @@ beforeEach(() => {
 });
 
 describe("Array List", () => {
+    it("It should array list get element throw error", () => {
+        array.add(3);
+        array.add(5);
+        array.add(8);
+        expect(() => array.get(3)).toThrow("Index 3 out of bounds for length 3");
+    });
+
+    it("It should array list get element to be 5", () => {
+        array.add(3);
+        array.add(5);
+        array.add(8);
+        expect(array.get(1)).toBe(5);
+    });
+
     it("It should array list get all to equal [3, 5, 8]", () => {
         array.add(3);
         array.add(5);
