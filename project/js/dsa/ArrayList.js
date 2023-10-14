@@ -42,12 +42,20 @@ class ArrayList {
     }
 
     /**
-     * @version 0.0.1
+     * @version 0.0.2
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.12
+     * @updatedAt 2023.10.14
      * @returns {any[]}
      */
-    getAll = () => this.#array;
+    getAll = () => {
+        let length = this.getLength();
+        let temp = new Array(length);
+        for(let i = 0;i < length;i++) {
+            temp[i] = this.#array[i];
+        }
+        return temp;
+    };
 
     /**
      * @version 0.0.1
@@ -56,5 +64,21 @@ class ArrayList {
      * @returns {int}
      */
     getLength = () => this.#index;
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.14
+     * @param {int} index
+     */
+    remove = (index) => {
+        for(let i = 0, j = 0;i < this.getLength();i++) {
+            if(index == i) {
+                continue;
+            }
+            this.#array[j++] = this.#array[i];
+        }
+        this.#index--;
+    }
 }
 module.exports = ArrayList;
