@@ -8,6 +8,14 @@ beforeEach(() => {
 });
 
 describe("Array List", () => {
+    it("It should array list remove index, expect [3, 5, 8] to equal [3, 8]", () => {
+        array.add(3);
+        array.add(5);
+        array.add(8);
+        array.remove(1);
+        expect(array.getAll()).toEqual([3, 8]);
+    });
+
     it("It should array list get element throw error", () => {
         array.add(3);
         array.add(5);
