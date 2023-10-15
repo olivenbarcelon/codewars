@@ -65,6 +65,15 @@ class ArrayList {
      */
     getLength = () => this.#index;
 
+    indexOf = (index) => {
+        for(let i = 0;i < this.getLength();i++){
+            if(index == i) {
+                return this.#array[i];
+            }
+        }
+        return -1;
+    }
+
     /**
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
