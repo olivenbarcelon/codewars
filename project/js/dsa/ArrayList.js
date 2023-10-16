@@ -65,6 +65,13 @@ class ArrayList {
      */
     getLength = () => this.#index;
 
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.15
+     * @param {int} index
+     * @returns {any}
+     */
     indexOf = (index) => {
         for(let i = 0;i < this.getLength();i++){
             if(index == i) {
@@ -88,6 +95,17 @@ class ArrayList {
             this.#array[j++] = this.#array[i];
         }
         this.#index--;
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.16
+     */
+    removeAll = () => {
+        this.#index = 0;
+        this.#size = 1;
+        this.#array = new Array(this.#size);
     }
 }
 module.exports = ArrayList;
