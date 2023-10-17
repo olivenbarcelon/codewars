@@ -16,14 +16,21 @@ describe("Array List", () => {
         expect(array.getAll()).toEqual([]);
     });
 
-    it("It should array list index of, expect [3, 5, 8] to be 5", () => {
+    it("It should array list index of 10 to be -1", () => {
         array.add(3);
         array.add(5);
         array.add(8);
-        expect(array.indexOf(1)).toBe(5);
+        expect(array.indexOf(10)).toBe(-1);
     });
 
-    it("It should array list index of, expect [3, 5, 8] to be 5", () => {
+    it("It should array list index of 5 to be 1", () => {
+        array.add(3);
+        array.add(5);
+        array.add(8);
+        expect(array.indexOf(5)).toBe(1);
+    });
+
+    it("It should array list index of -1 to be -1", () => {
         array.add(3);
         array.add(5);
         array.add(8);
