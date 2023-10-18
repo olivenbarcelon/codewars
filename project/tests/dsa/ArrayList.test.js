@@ -8,6 +8,17 @@ beforeEach(() => {
 });
 
 describe("Array List", () => {
+    it("It should array list insert [12, 16, 20, 40, 50, 70, 26] to equal [12, 16, 20, 40, 50, 70, 26]", () => {
+        array.insert(12);
+        array.insert(16);
+        array.insert(20);
+        array.insert(40);
+        array.insert(50);
+        array.insert(70);
+        array.insert(26);
+        expect(array.getAll()).toEqual([12, 16, 20, 40, 50, 70, 26]);
+    });
+
     it("It should array list remove all, expect [3, 5, 8] to be []", () => {
         array.add(3);
         array.add(5);
