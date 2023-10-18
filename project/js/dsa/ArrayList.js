@@ -12,15 +12,16 @@ class ArrayList {
     }
 
     /**
-     * @version 0.0.1
+     * @version 0.0.2
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.12
+     * @updatedAt 2023.10.18
      * @param {any} element
      */
     add = (element) => {
         if(this.#index >= this.#size - 1) {
             this.#size *= 2;
-            let temp = [...this.#array]
+            let temp = [...this.#array];
             this.#array = new Array(this.#size);
             temp.map((v, k) => this.#array[k] = v);
         }
@@ -80,6 +81,24 @@ class ArrayList {
             }
         }
         return -1;
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.18
+     * @param {any} element
+     */
+    insert = (element) => {
+        if(this.#index >= this.#size - 1) {
+            this.#size *= 2;
+            let temp = new Array(this.#size);
+            for(let i = 0;i < this.getLength();i++) {
+                temp[i] = this.#array[i];
+            }
+            this.#array = temp;
+        }
+        this.#array[this.#index++] = element;
     }
 
     /**
