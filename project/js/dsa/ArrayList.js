@@ -104,6 +104,24 @@ class ArrayList {
     /**
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.19
+     * @param {int} index
+     * @param {any} element
+     */
+    insertAt = (index, element) => {
+        if(index > this.#index) {
+            throw new Error(`Index ${index} out of bounds for length ${this.#index}`);
+        }
+        for(let i = this.getLength() - 1;i >= index;i--) {
+            this.#array[i + 1] = this.#array[i];
+        }
+        this.#array[index] = element;
+        this.#index++;
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.14
      * @param {int} index
      */
