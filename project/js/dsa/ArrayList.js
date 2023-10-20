@@ -122,6 +122,29 @@ class ArrayList {
     /**
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.20
+     * @param {int} element
+     */
+    insertSorted = (element) => {
+        if(this.#index >= this.#size - 1) {
+            this.#size *= 2;
+            let temp = new Array(this.#size);
+            for(let i = 0;i < this.getLength();i++) {
+                temp[i] = this.#array[i];
+            }
+            this.#array = temp;
+        }
+        let i = this.getLength() - 1;
+        for(;(i >= 0 && this.#array[i] > element);i--) {
+            this.#array[i + 1] = this.#array[i];
+        }
+        this.#array[i + 1] = element;
+        this.#index++;
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.14
      * @param {int} index
      */
