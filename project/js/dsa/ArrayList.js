@@ -4,11 +4,13 @@ class ArrayList {
     #array;
     #size;
     #index;
+    #sort;
 
     constructor() {
         this.#index = 0;
         this.#size = 1;
         this.#array = new Array(this.#size);
+        this.#sort = false;
     }
 
     /**
@@ -120,12 +122,17 @@ class ArrayList {
     }
 
     /**
-     * @version 0.0.1
+     * @version 0.0.2
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.20
+     * @updatedAt 2023.10.21
      * @param {int} element
      */
     insertSorted = (element) => {
+        if(this.#sort == false) {
+            this.#bubbleSort();
+            this.#sort = true;
+        }
         if(this.#index >= this.#size - 1) {
             this.#size *= 2;
             let temp = new Array(this.#size);
@@ -167,6 +174,30 @@ class ArrayList {
         this.#index = 0;
         this.#size = 1;
         this.#array = new Array(this.#size);
+    }
+
+    /**
+     * @version 0.0.1
+     * @author <olivenbarcelon@gmail.com>
+     * @createdAt 2023.10.21
+     */
+    #bubbleSort = () => {
+        let n = this.getLength();
+        var i, j, temp;
+        var swapped;
+        for(i = 0;i < n - 1;i++) {
+            swapped = false;
+            for(j = 0;j < n - i - 1;j++) {
+                if(this.#array[j] > this.#array[j + 1]) {
+                    temp = this.#array[j];
+                    this.#array[j] = this.#array[j + 1];
+                    this.#array[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if(swapped == false)
+            break;
+        }
     }
 }
 module.exports = ArrayList;
