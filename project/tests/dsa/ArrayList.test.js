@@ -8,6 +8,14 @@ beforeEach(() => {
 });
 
 describe("Array List", () => {
+    it("It should insert sorted, expect [4, 2, 8, 6] to equal [2, 4, 6, 8]", () => {
+        array.insert(4);
+        array.insert(2);
+        array.insert(8);
+        array.insertSorted(6);
+        expect(array.getAll()).toEqual([2, 4, 6, 8]);
+    });
+
     it("It should insert sorted, expect [12, 16, 20, 40, 50, 70] to equal [12, 16, 20, 26, 40, 50, 70]", () => {
         array.insertSorted(12);
         array.insertSorted(16);
