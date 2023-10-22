@@ -183,13 +183,11 @@ class ArrayList {
      */
     #bubbleSort = () => {
         let n = this.getLength();
-        var i, j, temp;
-        var swapped;
-        for(i = 0;i < n - 1;i++) {
-            swapped = false;
-            for(j = 0;j < n - i - 1;j++) {
+        for(let i = 0;i < n - 1;i++) {
+            let swapped = false;
+            for(let j = 0;j < n - i - 1;j++) {
                 if(this.#array[j] > this.#array[j + 1]) {
-                    temp = this.#array[j];
+                    let temp = this.#array[j];
                     this.#array[j] = this.#array[j + 1];
                     this.#array[j + 1] = temp;
                     swapped = true;
