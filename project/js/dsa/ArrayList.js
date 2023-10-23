@@ -177,9 +177,10 @@ class ArrayList {
     }
 
     /**
-     * @version 0.0.1
+     * @version 0.0.2
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.21
+     * @updatedAt 2023.10.23
      */
     #bubbleSort = () => {
         let n = this.getLength();
@@ -187,9 +188,7 @@ class ArrayList {
             let swapped = false;
             for(let j = 0;j < n - i - 1;j++) {
                 if(this.#array[j] > this.#array[j + 1]) {
-                    let temp = this.#array[j];
-                    this.#array[j] = this.#array[j + 1];
-                    this.#array[j + 1] = temp;
+                    [this.#array[j], this.#array[j + 1]] = [this.#array[j + 1], this.#array[j]];
                     swapped = true;
                 }
             }
