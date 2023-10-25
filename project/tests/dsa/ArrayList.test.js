@@ -53,67 +53,67 @@ describe("Array List", () => {
     });
 
     it("It should remove all, expect [3, 5, 8] to be []", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         array.removeAll();
         expect(array.getAll()).toEqual([]);
     });
 
     it("It should index of 10 to be -1", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         expect(array.indexOf(10)).toBe(-1);
     });
 
     it("It should index of 5 to be 1", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         expect(array.indexOf(5)).toBe(1);
     });
 
     it("It should index of -1 to be -1", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         expect(array.indexOf(-1)).toBe(-1);
     });
 
     it("It should remove index, expect [3, 5, 8] to equal [3, 8]", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         array.remove(1);
         expect(array.getAll()).toEqual([3, 8]);
     });
 
     it("It should get element throw error", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         expect(() => array.get(3)).toThrow("Index 3 out of bounds for length 3");
     });
 
     it("It should get element to be 5", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         expect(array.get(1)).toBe(5);
     });
 
     it("It should get all to equal [3, 5, 8]", () => {
-        array.add(3);
-        array.add(5);
-        array.add(8);
+        array.insert(3);
+        array.insert(5);
+        array.insert(8);
         expect(array.getAll()).toEqual([3, 5, 8]);
     });
 
     it("It should get length to be 3", () => {
-        array.add(1);
-        array.add(1);
-        array.add(2);
+        array.insert(1);
+        array.insert(1);
+        array.insert(2);
         expect(array.getLength()).toBe(3);
     });
 
