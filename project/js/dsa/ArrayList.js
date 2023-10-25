@@ -14,23 +14,6 @@ class ArrayList {
     }
 
     /**
-     * @version 0.0.2
-     * @author <olivenbarcelon@gmail.com>
-     * @createdAt 2023.10.12
-     * @updatedAt 2023.10.18
-     * @param {any} element
-     */
-    add = (element) => {
-        if(this.#index >= this.#size - 1) {
-            this.#size *= 2;
-            let temp = [...this.#array];
-            this.#array = new Array(this.#size);
-            temp.map((v, k) => this.#array[k] = v);
-        }
-        this.#array[this.#index++] = element;
-    }
-
-    /**
      * @version 0.0.1
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.13
