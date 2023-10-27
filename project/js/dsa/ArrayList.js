@@ -69,9 +69,10 @@ class ArrayList {
     }
 
     /**
-     * @version 0.0.1
+     * @version 0.0.2
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.18
+     * @updatedAt 2023.10.27
      * @param {any} element
      */
     insert = (element) => {
@@ -84,12 +85,14 @@ class ArrayList {
             this.#array = temp;
         }
         this.#array[this.#index++] = element;
+        this.#sort = false;
     }
 
     /**
-     * @version 0.0.1
+     * @version 0.0.2
      * @author <olivenbarcelon@gmail.com>
      * @createdAt 2023.10.19
+     * @updatedAt 2023.10.27
      * @param {int} index
      * @param {any} element
      */
@@ -101,6 +104,7 @@ class ArrayList {
             this.#array[i + 1] = this.#array[i];
         }
         this.#array[index] = element;
+        this.#sort = false;
         this.#index++;
     }
 
